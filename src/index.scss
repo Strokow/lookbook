@@ -21,9 +21,79 @@ header {
   img {
     margin-right: 15px;
   }
+
+  h3 {
+    
+  }
   
   
 }
+.login-button {
+  margin-right: 0px;
+  padding: 10px 20px;
+  border: 1px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #a5a5a5;
+  }
+
+
+}
+
+.signin-button {
+  margin-right: 0px;
+  padding: 10px 20px;
+  border: 1px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #a5a5a5;
+  } 
+}
+
+.cart-button {
+  margin-right: 0px;
+  padding: 10px 20px;
+  border: 1px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #a5a5a5;
+  }
+}
+
+.profile-button {
+  margin-right: 0px;
+  padding: 10px 20px;
+  border: 1px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #a5a5a5;
+  }
+}
+
 
 .content {
   h1 {

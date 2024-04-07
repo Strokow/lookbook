@@ -7,25 +7,25 @@ function App() {
         </div>
         <ul className="d-flex justify-center">
           <div className="d-flex justify-between">
-          <h3 className="text-uppercase" style={{ marginRight: '15px' }}>Log In</h3>
-          <h3 className="text-uppercase" style={{ marginRight: '15px' }}>Sign In</h3>
+          <h3 className="text-uppercase login-button" style={{ marginRight: '5px' }}>Log In</h3>
+          <h3 className="text-uppercase signin-button" style={{ marginRight: '15px' }}>Sign In</h3>
           </div>
 
           <div className="d-flex mr-30 align-center justify-between justify-between">
-            <li className="d-flex align-center">
+            <li className="d-flex align-center cart-button">
               <img height={30} weight={30} src="img/korblogo2.png" alt="Cart" />
-              <span style={{ marginRight: '15px' }}>
+              <span style={{marginLeft: '-10px', marginRight: '15px' }}>
                 19€
               </span>
             </li>
-            <li>
+            <li className="profile-button">
               <img height={30} weight={30} src="img/usericon.png" alt="Profile" />
             </li>
           </div>
         </ul>
       </header>
       <div className="content p-40">
-        <h1>All books</h1>
+        <h1>Our book range</h1>
         <p>Here will be some content
         </p>
       </div>
