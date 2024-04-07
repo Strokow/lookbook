@@ -8,7 +8,7 @@ function App() {
         <ul className="d-flex justify-center">
           <div className="d-flex justify-between">
           <h3 className="text-uppercase login-button" style={{ marginRight: '5px' }}>Log In</h3>
-          <h3 className="text-uppercase signin-button" style={{ marginRight: '15px' }}>Sign In</h3>
+          <h3 className="text-uppercase signin-button" style={{ marginRight: '5px' }}>Sign In</h3>
           </div>
 
           <div className="d-flex mr-30 align-center justify-between justify-between">
