@@ -27,9 +27,20 @@ function App() {
         </ul>
       </header>
       <div className="content p-40">
-        <h1>Our book range</h1>
-        <p>Here will be some content
-        </p>
+        <h1 className="mb-40">Our book range</h1>
+        <div className="card">
+          <img height={150} weight={150} src="/img/crime.jpg" alt="Crime and Punishment"/>
+          <h5>«Crime and punishment» Fyodor Dostoevsky</h5>
+          <div className="d-flex justify-between align-center">
+          <div className="d-flex flex-column">
+            <b>19€</b>
+          </div>
+          <button className="button">
+            <img height={20} weight={20} src="/img/greyplus.png" alt="Add"/>
+          </button>
+          </div>
+
+        </div>
       </div>
       <footer className="footer p-40 justify-center">
         <p>Titmannstraße 44 01309 Dresden Germany</p>
