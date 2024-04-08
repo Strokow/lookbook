@@ -60,6 +60,7 @@ header {
   &:hover {
     background-color: #dbdbdb;
   } 
+  
 }
 
 .cart-button {
@@ -102,20 +103,21 @@ header {
 }
 
 .footer {
+  
   font-size: 14px;
+  position: absolute;
 }
 
 .facebook, .whatsapp, .instagram {
+ 
   margin-right: 0px;
-  padding: 2px 1px;
+  padding: 1px ;
   border: 1px;
-  border-radius: 10px;
-  background-color: #ffffff;
+  
   color: rgb(0, 0, 0);
   cursor: pointer;
   transition: background-color 0.3s ease;
+  
 
-  &:hover {
-    background-color: #dbdbdb;
-  }
+  
 }
