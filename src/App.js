@@ -29,13 +29,26 @@ function App() {
         <p>Here will be some content
         </p>
       </div>
-      <footer className="p-40 justify-center">
+      <footer className="footer p-40 justify-center">
         <p>Titmannstraße 44 01309 Dresden Germany</p>
         <p>lookbook@examplemail.com</p>
-        <p>Tel.01722223340</p>
+        <p className="mb-25">Tel.01722223340</p>
+        
+        <a className="facebook" href="https://www.facebook.com/">
         <img className="mr-10" height={30} weight={30} src="img/fb.png" alt="Facebook" />
+        </a>
+        
+        
+        <a className="whatsapp" href="https://web.whatsapp.com/">
         <img className="mr-10" height={30} weight={30} src="img/wp.png" alt="WhatsApp" />
+    </a>
+        
+    
+    <a className="instagram" href="https://www.instagram.com/">
         <img className="mr-10" height={30} weight={30} src="img/ig.png" alt="Instagram" />
+    </a>
+    
+        
       </footer>
     </div>
   );
