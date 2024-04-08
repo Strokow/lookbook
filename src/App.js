@@ -29,6 +29,14 @@ function App() {
         <p>Here will be some content
         </p>
       </div>
+      <footer className="p-40 justify-center">
+        <p>Titmannstraße 44 01309 Dresden Germany</p>
+        <p>lookbook@examplemail.com</p>
+        <p>Tel.01722223340</p>
+        <img className="mr-10" height={30} weight={30} src="img/fb.png" alt="Facebook" />
+        <img className="mr-10" height={30} weight={30} src="img/wp.png" alt="WhatsApp" />
+        <img className="mr-10" height={30} weight={30} src="img/ig.png" alt="Instagram" />
+      </footer>
     </div>
   );
 }
