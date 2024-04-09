@@ -26,7 +26,14 @@ function App() {
           </div>
         </ul>
       </header>
+      <div className="search-container">
+    <input className="input-search" type="text"/>
+    <img className="search-icon" height={20} weight={20} src="/img/search.png" alt="Search" />
+</div>
       <div className="content p-40">
+      
+
+
         <h1 className="mb-40">Our book range</h1>
         <div className="card">
           <img height={150} weight={150} src="/img/crime.jpg" alt="Crime and Punishment"/>
