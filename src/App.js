@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 function App() {
   const [books, setBooks] = useState([]);
   async function loadBooks() {
-    const res = await fetch("/api/book/forusername/active");
+    const res = await fetch("/api/books/active");
     const obj = await res.json();
     console.log(obj);
     setBooks(obj);
@@ -44,3 +44,4 @@ function App() {
 }
 
 export default App;
+
