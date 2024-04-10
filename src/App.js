@@ -32,7 +32,7 @@ function App() {
         <h1 className="mb-40">Our book range</h1>
         <div className="d-flex flex-wrap justify-between">
           {books.map((book) => (
-            <div style={{ marginBottom: "20px" }}>
+            <div style={{ marginBottom: "30px" }}>
               <Card book={book} />
             </div>
           ))}
