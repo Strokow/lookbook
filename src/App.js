@@ -19,14 +19,14 @@ function App() {
     <div className="wrapper clear">
       <Header />
       <div className="search-container">
-        <input className="input-search" type="text" />
+        <input className="input-search" type="text" /> {/* стилистики класса input-search находится в файле index.scss на строках 118-129 */}
         <img
-          className="search-icon"
+          className="search-icon" 
           height={20}
           width={20}
           src="/img/search.png"
           alt="Search"
-        />
+        /> {/* стилистики класса input-icon (лупа в строке поиска) находится в файле index.scss на строках 131-136 */}
       </div>
       <div className="content p-40">
         <h1 className="mb-40">Our book range</h1>
