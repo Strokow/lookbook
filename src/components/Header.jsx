@@ -6,8 +6,8 @@ function Header() {
         </div>
         <ul className="d-flex justify-center">
           <div className="d-flex justify-between">
-            <h3 className="text-uppercase login-button" style={{ marginRight: '5px' }}>Log In</h3>
-            <h3 className="text-uppercase signin-button" style={{ marginRight: '5px' }}>Sign In</h3>
+            <h3 className="text-uppercase login-button" style={{ marginRight: '5px' }}>Sign In</h3>
+            <h3 className="text-uppercase signin-button" style={{ marginRight: '5px' }}>Sign Up</h3>
           </div>
 
           <div className="d-flex mr-30 align-center justify-between justify-between">
@@ -18,7 +18,7 @@ function Header() {
               </span>
             </li>
             <li className="profile-button">
-              <img height={30} width={30} src="img/usericon.png" alt="Profile" />
+              {/* <img height={30} width={30} src="img/usericon.png" alt="Profile" /> */}
             </li>
           </div>
         </ul>
