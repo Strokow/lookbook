@@ -25,10 +25,10 @@ function App() {
       <div className="wrapper clear">
         <Header />
         <Routes>
-          <Route path="/" element={<Home books={books} />} />
-          <Route path="/auth" element={<Auth />} />
-          <Route path="/reg" element={<Reg />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/" component={Home} element={<Home books={books} />} />
+          <Route path="/auth" component={Auth} element={<Auth />} />
+          <Route path="/reg" component={Reg} element={<Reg />} />
+          <Route path="/cart" component={Cart} element={<Cart />} />
         </Routes>
         <Footer />
       </div>
