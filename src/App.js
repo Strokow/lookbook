@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
-import Card from "./components/Card";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import Cart from "./pages/Cart";
+import Auth from "./pages/Auth";
+import Reg from "./pages/Reg";
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -16,32 +21,19 @@ function App() {
   }, []);
 
   return (
-    <div className="wrapper clear">
-      <Header />
-      <div className="search-container">
-        <input className="input-search" type="text" /> {/* стилистики класса input-search находится в файле index.scss на строках 118-129 */}
-        <img
-          className="search-icon" 
-          height={20}
-          width={20}
-          src="/img/search.png"
-          alt="Search"
-        /> {/* стилистики класса input-icon (лупа в строке поиска) находится в файле index.scss на строках 131-136 */}
+    <Router>
+      <div className="wrapper clear">
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home books={books} />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/reg" element={<Reg />} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+        <Footer />
       </div>
-      <div className="content p-40">
-        <h1 className="mb-40">Our book range</h1>
-        <div className="d-flex flex-wrap justify-between">
-          {books.map((book) => (
-            <div style={{ marginBottom: "30px" }}>
-              <Card book={book} />
-            </div>
-          ))}
-        </div>
-      </div>
-      <Footer />
-    </div>
+    </Router>
   );
 }
 
 export default App;
-
