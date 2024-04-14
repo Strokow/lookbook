@@ -100,7 +100,7 @@ header {
 
 
 .content {
-  margin-top: 12%;
+  margin-top: 0;
   margin-bottom: auto;
   h1 {
     margin: 0;
@@ -308,6 +308,40 @@ header {
   
   
 } 
+
+// Стили добавленные для поиска книг
+
+.search-field {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.search-field input {
+width: 50%;
+border-radius: 17px;
+border: 1px solid #606060;
+height: 40px;
+padding: 10px;
+font-size: 18px;
+padding-left: 50px;
+margin: 20px 10px;
+}
+
+.search-field form {
+  margin: 20px;
+  font-size: 18px;
+}
+
+.search-field .found-books {
+  display: flex;
+  justify-content: center;
+}
+
+.modal {
+  font-size: 18px;
+}
+//=============================================================
+
 
 
 
