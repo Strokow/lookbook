@@ -54,11 +54,13 @@ const SearchField = () => {
             {/* Модальное окно "Книга не найдена" */}
             {showModal && (
                 <div className="modal" style={{ display: 'block', backgroundColor: 'rgba(0, 0, 0, 0.5)', position: 'fixed', top: 0, left: 0, right: 0, bottom: 0 }}>
-                    <div className="modal-dialog" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: '#fff', padding: '20px', borderRadius: '5px' }}>
+                    <div className="modal-dialog" style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', backgroundColor: '#fff', padding: '20px', borderRadius: '20px' }}>
                         <div className="modal-content">
                             <div className="modal-header">
+                            
                                 <h5 className="modal-title">Book not found</h5>
                             </div>
+                            
                             <div className="modal-body">
                                 <p>Unfortunately, your search returned no results!</p>
                             </div>

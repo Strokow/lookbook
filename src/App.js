@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Auth from "./pages/Auth";
@@ -24,6 +25,7 @@ function App() {
     <Router>
       <div className="wrapper clear">
         <Header />
+        
         <Routes>
           <Route path="/" component={Home} element={<Home books={books} />} />
           <Route path="/auth" component={Auth} element={<Auth />} />

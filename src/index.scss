@@ -129,12 +129,6 @@ header {
   padding-left: 50px;
 }
 
-.search-icon {
-  position: absolute;
-  left: 270px;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
 
 .card {
@@ -314,28 +308,43 @@ header {
 .search-field {
   text-align: center;
   margin-bottom: 50px;
+
+  .search-bar {
+    position: relative;
+    width: 50%;
+    margin: 20px auto;
+
+    input {
+      width: 100%;
+      border-radius: 17px;
+      border: 1px solid #606060;
+      height: 40px;
+      padding: 10px;
+      font-size: 18px;
+      padding-left: 50px; // Увеличьте это значение, если иконка перекрывает текст
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 15px; // Измените это значение, чтобы переместить иконку влево или вправо
+      top: 50%;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  form {
+    margin: 20px;
+    font-size: 18px;
+  }
+
+  .found-books {
+    display: flex;
+    justify-content: center;
+  }
 }
 
-.search-field input {
-width: 50%;
-border-radius: 17px;
-border: 1px solid #606060;
-height: 40px;
-padding: 10px;
-font-size: 18px;
-padding-left: 50px;
-margin: 20px 10px;
-}
-
-.search-field form {
-  margin: 20px;
-  font-size: 18px;
-}
-
-.search-field .found-books {
-  display: flex;
-  justify-content: center;
-}
 
 .modal {
   font-size: 18px;
@@ -343,7 +352,21 @@ margin: 20px 10px;
 //=============================================================
 
 
+.btn-secondary {
+  margin-right: 0px;
+  padding: 10px;
+  border: 1px solid; // Укажите цвет границы, если нужно
+  border-radius: 10px;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #f8f9fa; // Выберите цвет при наведении, который вам подходит
+    color: #606060; // Выберите цвет текста при наведении, который вам подходит
+  }
+}
 
-
-
-
+.modal-title {
+  font-size: 25px;
+}
