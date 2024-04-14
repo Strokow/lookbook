@@ -4,6 +4,7 @@ import './index.scss';
 import 'macro-css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// import ContentLoader from "react-content-loader";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

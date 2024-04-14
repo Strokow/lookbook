@@ -1,5 +1,20 @@
+import React, { useState, useEffect } from "react";
+import MyLoader from "../components/MyLoader";
 import Card from "../components/Card";
-function Home({ books }) {
+
+function Home() {
+  const [books, setBooks] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    fetch("/api/books/active")
+      .then((res) => res.json())
+      .then((data) => {
+        setBooks(data);
+        setIsLoading(false);
+      });
+  }, []);
+
   return (
     <div className="content p-40">
       <div className="search-container">
@@ -16,7 +31,7 @@ function Home({ books }) {
       </div>
       <h1 className="mb-40">Our book range</h1>
       <div className="d-flex flex-wrap justify-between">
-        {books.map((book) => (
+        {isLoading ? Array(21).fill(<MyLoader />) : books.map((book) => (
           <div style={{ marginBottom: "30px" }}>
             <Card book={book} />
           </div>
