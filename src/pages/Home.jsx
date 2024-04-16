@@ -33,9 +33,9 @@ function Home() {
       </div>*/}
       <h1 className="mb-40">Our book range</h1>
       <div className="d-flex flex-wrap justify-between">
-        {isLoading ? Array(21).fill(<MyLoader />) : books.map((book) => (
-          <div style={{ marginBottom: "30px" }}>
-            <Card book={book} />
+        { books.map((book) => (
+          <div style={{ marginBottom: "30px" }} key={book.id}>
+              {isLoading ? <MyLoader /> : <Card book={book} /> }
           </div>
         ))}
       </div>

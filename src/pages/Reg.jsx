@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 function Reg() {
-  const [backendLink, setBackendLink] = useState(null); // Место для ссылки на бэкэнд
+  const backendLink = '/api/users/reg/items'; // Место для ссылки на бэкэнд
 
   const validateForm = (event) => {
     event.preventDefault();
@@ -26,10 +26,34 @@ function Reg() {
     return true;
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit =  async (event) => {
     if (validateForm(event)) {
-      // Если форма валидна, отправляем данные на сервер
-      // setBackendLink(...); // Здесь будет ваша ссылка на бэкэнд
+      event.preventDefault();
+      const name = event.target.elements["new-login"].value;
+      const psw = event.target.elements["new-password"].value;
+
+      try {
+        // Отправка данных на сервер
+        const response = await fetch(backendLink, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ name, psw }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to register');
+        }
+
+        alert('You have successfully registered! To make purchases you need to log in!');
+        document.getElementById("new-login").value = "";
+        document.getElementById("new-password").value = "";
+        
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Registration failed. Please try again.');
+      }
     }
   };
 
