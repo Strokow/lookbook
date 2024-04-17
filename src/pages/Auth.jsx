@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { useAuth } from "../components/AuthContext";
 
 function Auth() {
+  const { login } = useAuth();
   const backendLink = '/api/auth/login'; // Место для ссылки на бэкэнд
 
   const validateForm = (event) => {
@@ -45,6 +47,9 @@ function Auth() {
         if (!response.ok) {
           throw new Error('Failed to authorization');
         }
+
+        const data = await response.json();
+        login(data);
 
         alert('You have successfully logged in!');
         document.getElementById("login").value = "";

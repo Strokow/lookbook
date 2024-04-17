@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { AuthProvider } from './components/AuthContext';
 
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
@@ -24,15 +25,17 @@ function App() {
   return (
     <Router>
       <div className="wrapper clear">
-        <Header />
-        
-        <Routes>
-          <Route path="/" component={Home} element={<Home books={books} />} />
-          <Route path="/auth" component={Auth} element={<Auth />} />
-          <Route path="/reg" component={Reg} element={<Reg />} />
-          <Route path="/cart" component={Cart} element={<Cart />} />
-        </Routes>
-        <Footer />
+        <AuthProvider>
+          <Header />
+
+          <Routes>
+            <Route path="/" component={Home} element={<Home books={books} />} />
+            <Route path="/auth" component={Auth} element={<Auth />} />
+            <Route path="/reg" component={Reg} element={<Reg />} />
+            <Route path="/cart" component={Cart} element={<Cart />} />
+          </Routes>
+          <Footer />
+        </AuthProvider>
       </div>
     </Router>
   );
