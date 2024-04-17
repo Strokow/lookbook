@@ -32,9 +32,8 @@ header {
   
 }
 .login-button {
-  margin-right: 0px;
+  margin-right: 5px;
   padding: 10px 20px;
-  border: 1px;
   border-radius: 20px;
   background-color: #ffffff;
   color: rgb(0, 0, 0);
@@ -44,18 +43,41 @@ header {
 
   &:hover {
     background-color: #dbdbdb;
+    
   }
 
 
 }
 
+.userData {
+  font-size: 15px;
+}
+
 .signin-button {
+  margin-right: 0px;
+  padding: 10px 20px;
+
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #dbdbdb;
+    border: none;
+  } 
+  
+}
+
+.logOutButton {
   margin-right: 0px;
   padding: 10px 20px;
   border: 1px;
   border-radius: 20px;
-  background-color: #ffffff;
-  color: rgb(0, 0, 0);
+  background-color: #000000;
+  color: rgb(255, 255, 255);
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 14px;
@@ -63,7 +85,7 @@ header {
   &:hover {
     background-color: #dbdbdb;
   } 
-  
+
 }
 
 .cart-button {
@@ -163,10 +185,10 @@ header {
 
 }
 .button {
-  background: #f4f4f4;
-  border: 1px solid #bbb9b9;
+  background: #ffffff;
+  border: 1px solid #ffffff;
   box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 8px solid;
   height: 40px;
   width: 40px;
   cursor: pointer;

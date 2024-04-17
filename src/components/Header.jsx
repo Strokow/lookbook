@@ -34,26 +34,22 @@ function Header() {
           <img height={80} weight={80} src="img/lookbooklogo.png" alt="Lookbook Logo" />
         </div>
       </Link>
-      <ul className="d-flex justify-center">
+      <ul className="d-flex justify-center justify-between">
         {user ? (
-          <>
-            <li>Welcome, {user.userData.message}!</li>
+          <div className="d-flex align-center"> 
+            <li className="userData mr-10">Welcome, {user.userData.message}!</li>
             <li>
-              <button onClick={handleLogout}>Logout</button>
+              <button className="logOutButton text-uppercase mr-5" onClick={handleLogout}>Log out</button>
             </li>
-            <div className="d-flex mr-30 align-center justify-between justify-between">
-              <Link to="cart">
-                <li className="d-flex align-center cart-button">
-                  <img height={30} width={30} src="img/korblogo2.png" alt="Cart" />
-                  <span style={{ marginLeft: '-10px', marginRight: '15px' }}>
-                    19€
-                  </span>
-                </li>
-              </Link>
-            </div>
-
-          </>
-
+            <Link to="cart">
+              <li className="d-flex align-center cart-button">
+                <img height={30} width={30} src="img/korblogo2.png" alt="Cart" />
+                <span style={{ marginLeft: '-10px', marginRight: '15px' }}>
+                  19€
+                </span>
+              </li>
+            </Link>
+          </div> 
         ) : (
           <div className="d-flex justify-between">
             <Link to="/auth">
@@ -64,7 +60,6 @@ function Header() {
             </Link>
           </div>
         )}
-
       </ul>
     </header>
   )
