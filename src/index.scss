@@ -392,3 +392,29 @@ header {
 .modal-title {
   font-size: 25px;
 }
+
+.buy-button {
+
+width: 600px;
+height: 60px;
+  margin-right: 0px;
+  padding: 10px;
+  border: 1px solid; // Укажите цвет границы, если нужно
+  border-radius: 10px;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  &:hover {
+    background-color: #8d8d8d; // Выберите цвет при наведении, который вам подходит
+    color: #313131; // Выберите цвет текста при наведении, который вам подходит
+    border: none;
+  
+  }
+
+}
+
+.doneness {
+  margin-left: 43%;
+  margin-bottom: 33px;
+}

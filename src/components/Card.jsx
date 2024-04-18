@@ -32,6 +32,30 @@ function Card({ book, updateCart }) {
 
   }
 
+  const handleRemoveClick = () => {
+    const login = user?.message;
+    const requestBody = {
+      bookId: book.id
+    };
+    fetch(`/api/carts/${login}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(requestBody)
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to remove book from cart');
+        }
+        // Обновляем данные о количестве книг и общей стоимости корзины
+        updateCart();
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  }
+
   return (
     <div className="card" >
       <img style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }} height={160} width={123} src={`/api/img/${book.pathimg}`} alt={book.name} />
@@ -43,6 +67,7 @@ function Card({ book, updateCart }) {
         <button className="button" onClick={handleClick} disabled={!isLoggedIn}>
           <img height={25} width={25} src={isAdded ? "/img/doneblack.png" : "/img/greyplus.png"} alt={isAdded ? "Added" : "Add"} />
         </button>
+        
       </div>
     </div>
   )

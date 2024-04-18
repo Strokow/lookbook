@@ -58,14 +58,15 @@ const SearchField = () => {
                         <div className="modal-content">
                             <div className="modal-header">
                             
-                                <h5 className="modal-title">Book not found</h5>
+                                <h5 className="modal-title mb-10">Book not found</h5>
                             </div>
+                            <img className="smile" height={40} weight={40} src="/img/sad.png"/>
                             
-                            <div className="modal-body">
+                            <div className="modal-body mt-10">
                                 <p>Unfortunately, your search returned no results!</p>
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn btn-secondary" onClick={handleCloseModal}>Close</button>
+                                <button type="button" className="btn btn-secondary mt-10" onClick={handleCloseModal}>Close</button>
                             </div>
                         </div>
                     </div>

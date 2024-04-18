@@ -9,6 +9,7 @@ import Home from "./pages/Home";
 import Cart from "./pages/Cart";
 import Auth from "./pages/Auth";
 import Reg from "./pages/Reg";
+import Ordered from "./pages/Ordered";
 
 function App() {
   const [books, setBooks] = useState([]);
@@ -33,6 +34,7 @@ function App() {
             <Route path="/auth" component={Auth} element={<Auth />} />
             <Route path="/reg" component={Reg} element={<Reg />} />
             <Route path="/cart" component={Cart} element={<Cart />} />
+            <Route path="/ordered" component={Ordered} element={<Ordered />} />
           </Routes>
           <Footer />
         </AuthProvider>
