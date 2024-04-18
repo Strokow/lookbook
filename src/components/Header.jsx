@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from './AuthContext';
+import CartItemCount from './CartItemCount'; 
 
 function Header() {
   const { user, logout } = useAuth();
@@ -10,10 +11,12 @@ function Header() {
       const response = await fetch(backendLink);
 
       if (response.ok) {
-        alert("Logout successful");
+        //alert("Logout successful");
         console.log('Logout successful');
 
         logout(); // Вызываем функцию logout из вашего контекста авторизации
+        window.location.reload(); // Перезагрузка страницы
+
       } else {
         alert("Logout failed");
         console.error('Logout failed');
@@ -36,8 +39,8 @@ function Header() {
       </Link>
       <ul className="d-flex justify-center justify-between">
         {user ? (
-          <div className="d-flex align-center"> 
-            <li className="userData mr-10">Welcome, {user.userData.message}!</li>
+          <div className="d-flex align-center">
+            <li className="userData mr-10">Welcome, {user?.message}!</li>
             <li>
               <button className="logOutButton text-uppercase mr-5" onClick={handleLogout}>Log out</button>
             </li>
@@ -45,11 +48,11 @@ function Header() {
               <li className="d-flex align-center cart-button">
                 <img height={30} width={30} src="img/korblogo2.png" alt="Cart" />
                 <span style={{ marginLeft: '-10px', marginRight: '15px' }}>
-                  19€
+                  <CartItemCount />
                 </span>
               </li>
             </Link>
-          </div> 
+          </div>
         ) : (
           <div className="d-flex justify-between">
             <Link to="/auth">

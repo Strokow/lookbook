@@ -50,10 +50,6 @@ function Auth() {
 
         const data = await response.json();
         login(data);
-
-        alert('You have successfully logged in!');
-        document.getElementById("login").value = "";
-        document.getElementById("password").value = "";
         
       } catch (error) {
         console.error('Error:', error);

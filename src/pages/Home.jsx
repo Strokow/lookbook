@@ -2,10 +2,33 @@ import React, { useState, useEffect } from "react";
 import MyLoader from "../components/MyLoader";
 import Card from "../components/Card";
 import SearchField from "../components/SearchField";
+import { useAuth } from '../components/AuthContext';
 
 function Home() {
   const [books, setBooks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [cartData, setCartData] = useState({});
+  const { user } = useAuth();
+
+  const updateCart = () => {
+    // Здесь выполняется обновление данных о корзине
+    // Например, запрос на сервер для получения актуальных данных
+    // После получения данных вызываем setCartData() с новыми данными
+    fetchData(); // Выполняем запрос на сервер для обновления данных
+  };
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(`/api/carts/${user?.message}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch cart data');
+      }
+      const data = await response.json();
+      setCartData(data); // Обновляем данные о корзине
+    } catch (error) {
+      console.error('Error fetching cart data:', error);
+    }
+  };
 
   useEffect(() => {
     fetch("/api/books/active")
@@ -19,23 +42,11 @@ function Home() {
   return (
     <div className="content p-40">
       <SearchField />
-      {/*<div className="search-container">
-        <input className="input-search" type="text" />{" "}
-         стилистики класса input-search находится в файле index.scss на строках 118-129 
-        <img
-          className="search-icon"
-          height={20}
-          width={20}
-          src="/img/search.png"
-          alt="Search"
-        />{" "}
-         стилистики класса input-icon (лупа в строке поиска) находится в файле index.scss на строках 131-136 
-      </div>*/}
       <h1 className="mb-40">Our book range</h1>
       <div className="d-flex flex-wrap justify-between">
         { books.map((book) => (
           <div style={{ marginBottom: "30px" }} key={book.id}>
-              {isLoading ? <MyLoader /> : <Card book={book} /> }
+              {isLoading ? <MyLoader /> : <Card book={book} updateCart={updateCart} /> }
           </div>
         ))}
       </div>
