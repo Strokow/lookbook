@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import MyLoader from "../components/MyLoader";
-import Card from "../components/Card";
+import CardOfCart from "../components/CardOfCart";
 import { useAuth } from '../components/AuthContext';
 
 function Cart() {
   const [books, setBooks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const { user } = useAuth();
+  const [totalPrice, setTotalPrice] = useState(0);
 
   useEffect(() => {
     fetch(`/api/carts/books/${user?.message}`)
@@ -14,6 +15,11 @@ function Cart() {
       .then((data) => {
         setBooks(data);
         setIsLoading(false);
+        let total = 0;
+        data.forEach(book => {
+          total += book.price; // предполагая, что у каждой книги есть свойство цены
+        });
+        setTotalPrice(total);
       });
   }, []);
 
@@ -23,10 +29,21 @@ function Cart() {
       <div className="d-flex flex-wrap justify-between">
         {books.map((book) => (
           <div style={{ marginBottom: "30px" }} key={book.id}>
-            {isLoading ? <MyLoader /> : <Card book={book}/>}
+            {isLoading ? <MyLoader /> : <CardOfCart book={book}/>}
           </div>
         ))}
       </div>
+      {!isLoading && (
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+          <button className="buy-button" onClick={() => {
+            // alert(`Total price is ${totalPrice}`);
+            window.location.href = 'Ordered'; 
+          }}>
+            PURCHASE - TOTAL ${totalPrice}
+          </button>
+        </div>
+        
+        )}
     </div>
   </div>;
 }
