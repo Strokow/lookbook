@@ -1,35 +1,51 @@
 import React, { useState } from 'react';
 import { useAuth } from './AuthContext';
+import { useCart } from './CartContext';
 
-function Card({ book, updateCart }) {
+function Card({ book }) {
+  const { updateCartData } = useCart();
   const [isAdded, setIsAdded] = useState(false);
   const { user } = useAuth();
   const [isLoggedIn, setIsLoggedIn] = useState(user !== null);
 
-  const handleClick = () => {
+  const handleClick = async () => {
     setIsAdded(!isAdded);
     const login = user?.message;
     const requestBody = {
       bookId: book.id
     };
-    fetch(`/api/carts/${login}`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestBody)
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to add book to cart');
-        }
-        // Обновляем данные о количестве книг и общей стоимости корзины
-        updateCart();
-      })
-      .catch(error => {
-        console.error('Error:', error);
+
+    try {
+      const response = await fetch(`/api/carts/${login}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody)
       });
 
+      if (!response.ok) {
+        throw new Error('Failed to add book to cart');
+      }
+
+      // Получение данных о корзине
+      const cartResponse = await fetch(`/api/carts/${login}`);
+      if (!cartResponse.ok) {
+        throw new Error('Failed to fetch cart item count');
+      }
+
+      const data = await cartResponse.json();
+      const newCartData = {
+        totalCount: data.totalCount,
+        totalPrice: data.totalPrice,
+      };
+
+      // Обновление контекста с новыми данными
+      updateCartData(newCartData);
+
+    } catch (error) {
+      console.error('Error:', error);
+    }  
   }
 
   return (

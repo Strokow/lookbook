@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { AuthProvider } from './components/AuthContext';
+import { CartProvider } from './components/CartContext';
 
 import Home from "./pages/Home";
 import Cart from "./pages/Cart";
@@ -26,6 +27,7 @@ function App() {
     <Router>
       <div className="wrapper clear">
         <AuthProvider>
+          <CartProvider>
           <Header />
 
           <Routes>
@@ -35,6 +37,7 @@ function App() {
             <Route path="/cart" component={Cart} element={<Cart />} />
           </Routes>
           <Footer />
+          </CartProvider>
         </AuthProvider>
       </div>
     </Router>
