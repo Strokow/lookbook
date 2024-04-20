@@ -26,6 +26,9 @@ function Cart() {
   return <div className="wrapper clear">
     <div className="content p-40">
       <h1 className="mb-40">Books in the cart</h1>
+
+      
+
       <div className="d-flex flex-wrap justify-between">
         {books.map((book) => (
           <div style={{ marginBottom: "30px" }} key={book.id}>
@@ -33,13 +36,16 @@ function Cart() {
           </div>
         ))}
       </div>
+
+
+
       {!isLoading && (
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
           <button className="buy-button" onClick={() => {
             // alert(`Total price is ${totalPrice}`);
             window.location.href = 'Ordered'; 
           }}>
-            PURCHASE - TOTAL ${totalPrice}
+            PURCHASE - TOTAL ${totalPrice.toFixed(2)}
           </button>
         </div>
         
