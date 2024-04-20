@@ -1,17 +1,18 @@
 import { Link } from 'react-router-dom';
 import { useAuth } from './AuthContext';
-import CartItemCount from './CartItemCount'; 
+import { useCart } from './CartContext';
+import { useEffect } from 'react';
 
 function Header() {
   const { user, logout } = useAuth();
   const backendLink = '/api/auth/logout'; // Место для ссылки на бэкэнд
+  const { cartData, updateCartData } = useCart();
 
   const handleLogout = async () => {
     try {
       const response = await fetch(backendLink);
 
       if (response.ok) {
-        //alert("Logout successful");
         console.log('Logout successful');
 
         logout(); // Вызываем функцию logout из вашего контекста авторизации
@@ -30,6 +31,27 @@ function Header() {
 
   }
 
+  useEffect(() => {
+    fetch(`/api/carts/${user?.message}`)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Failed to fetch cart item count');
+        }
+        return response.json();
+        
+      })
+      .then(data => {
+        const newCartData = {
+          totalCount: data.totalCount, // Новое количество книг в корзине
+          totalPrice: data.totalPrice, // Новая общая стоимость корзины
+        };
+        updateCartData(newCartData);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  },[user])
+
   return (
     <header className="d-flex justify-between align-center p-40">
       <Link to="/">
@@ -47,8 +69,8 @@ function Header() {
             <Link to="cart">
               <li className="d-flex align-center cart-button">
                 <img height={30} width={30} src="img/korblogo2.png" alt="Cart" />
-                <span style={{ marginLeft: '-10px', marginRight: '15px' }}>
-                  <CartItemCount />
+                <span style={{ marginLeft: '-10px', marginRight: '15px' }}>          
+                  {cartData.totalCount} шт. / {cartData.totalPrice.toFixed(2)} €
                 </span>
               </li>
             </Link>

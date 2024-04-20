@@ -2,14 +2,11 @@ import React, { useState } from 'react';
 import { useAuth } from './AuthContext';
 import { useCart } from './CartContext';
 
-function Card({ book }) {
+function CardOfCart({ book }) {
   const { updateCartData } = useCart();
-  const [isAdded, setIsAdded] = useState(false);
   const { user } = useAuth();
-  const [isLoggedIn, setIsLoggedIn] = useState(user !== null);
 
   const handleClick = async () => {
-    setIsAdded(!isAdded);
     const login = user?.message;
     const requestBody = {
       bookId: book.id
@@ -17,7 +14,7 @@ function Card({ book }) {
 
     try {
       const response = await fetch(`/api/carts/${login}`, {
-        method: 'POST',
+        method: 'DELETE',
         headers: {
           'Content-Type': 'application/json'
         },
@@ -42,34 +39,11 @@ function Card({ book }) {
 
       // Обновление контекста с новыми данными
       updateCartData(newCartData);
-
+      
+      window.location.reload(); // Перезагрузка страницы
     } catch (error) {
       console.error('Error:', error);
     }  
-  }
-
-  const handleRemoveClick = () => {
-    const login = user?.message;
-    const requestBody = {
-      bookId: book.id
-    };
-    fetch(`/api/carts/${login}`, {
-      method: 'DELETE',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestBody)
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Failed to remove book from cart');
-        }
-        // Обновляем данные о количестве книг и общей стоимости корзины
-        updateCart();
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
   }
 
   return (
@@ -80,13 +54,12 @@ function Card({ book }) {
         <div className="d-flex flex-column">
           <b>{book.price}€</b>
         </div>
-        <button className="button" onClick={handleClick} disabled={!isLoggedIn}>
-          <img height={25} width={25} src={isAdded ? "/img/doneblack.png" : "/img/greyplus.png"} alt={isAdded ? "Added" : "Add"} />
+        <button className="button" onClick={handleClick}>
+          <img height={25} width={25} src={"/img/greyminus.png"} alt={""} />
         </button>
-        
       </div>
     </div>
   )
 }
 
-export default Card;
+export default CardOfCart;
