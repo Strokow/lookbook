@@ -40,7 +40,7 @@ function Cart() {
             // alert(`Total price is ${totalPrice}`);
             window.location.href = '/ordered'; 
           }}>
-            PURCHASE - TOTAL ${totalPrice}
+            PURCHASE - TOTAL €{totalPrice}
           </button>
         </div>
         
