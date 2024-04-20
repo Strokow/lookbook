@@ -18,19 +18,19 @@ body {
 header {
 
   border-bottom: 1px solid #3d3d3d;
+
   img {
     margin-right: 15px;
   }
 
-  h3 {
-    
-  }
+  h3 {}
 
-  
 
-  
-  
+
+
+
 }
+
 .login-button {
   margin-right: 5px;
   padding: 10px 20px;
@@ -43,7 +43,7 @@ header {
 
   &:hover {
     background-color: #dbdbdb;
-    
+
   }
 
 
@@ -67,8 +67,8 @@ header {
   &:hover {
     background-color: #dbdbdb;
     border: none;
-  } 
-  
+  }
+
 }
 
 .logOutButton {
@@ -84,7 +84,7 @@ header {
 
   &:hover {
     background-color: #dbdbdb;
-  } 
+  }
 
 }
 
@@ -97,7 +97,7 @@ header {
   color: rgb(0, 0, 0);
   cursor: pointer;
   transition: background-color 0.3s ease;
-  
+
 
   &:hover {
     background-color: #dbdbdb;
@@ -113,7 +113,7 @@ header {
   color: rgb(0, 0, 0);
   cursor: pointer;
   transition: background-color 0.3s ease;
-  
+
 
   &:hover {
     background-color: #dbdbdb;
@@ -124,17 +124,18 @@ header {
 .content {
   margin-top: 0;
   margin-bottom: auto;
+
   h1 {
     margin: 0;
   }
 
-  
-  
+
+
 }
 
 .search-container {
   position: relative;
-  margin-top: -7% ;
+  margin-top: -7%;
   margin-bottom: 10%;
 }
 
@@ -173,17 +174,18 @@ header {
   h5 {
     font-weight: 400;
     font-size: 18px;
-    
+
 
   }
 
   b {
     font-size: 20px;
   }
-  
+
 
 
 }
+
 .button {
   background: #ffffff;
   border: 1px solid #ffffff;
@@ -199,27 +201,29 @@ header {
 }
 
 .footer {
-  
+
   font-size: 14px;
   position: absolute;
 }
 
-.facebook, .whatsapp, .instagram {
- 
+.facebook,
+.whatsapp,
+.instagram {
+
   margin-right: 0px;
-  padding: 1px ;
+  padding: 1px;
   border: 1px;
-  
+
   color: rgb(0, 0, 0);
   cursor: pointer;
   transition: background-color 0.3s ease;
-  
 
-  
+
+
 }
 
 .authForm {
-  
+
   border: 1px solid #606060;
   padding: 30px;
   width: 450px;
@@ -228,16 +232,17 @@ header {
   margin-right: 30px;
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
   cursor: pointer;
-  
-  
+
+
 
   &:hover {
     box-shadow: 0px 20px 30px rgb(196, 196, 196);
     transform: translateY(-5px);
   }
 }
+
 .authFormTwo {
-  
+
   border: 1px solid #606060;
   padding: 30px;
   width: 450px;
@@ -246,8 +251,8 @@ header {
   margin-right: 30px;
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
   cursor: pointer;
-  
-  
+
+
 
   &:hover {
     box-shadow: 0px 20px 30px rgb(196, 196, 196);
@@ -272,9 +277,11 @@ header {
 }
 
 .notification1 {
-  font-size: 20px;;
+  font-size: 20px;
+  ;
   text-align: center;
 }
+
 .notification2 {
   font-size: 20px;
   text-align: center;
@@ -284,7 +291,7 @@ header {
   margin-bottom: 5%;
   margin-right: 0px;
   padding: 10px;
-  border: 1px solid ;
+  border: 1px solid;
   border-radius: 10px;
   background-color: #ffffff;
   color: rgb(0, 0, 0);
@@ -297,7 +304,7 @@ header {
   margin-bottom: 10%;
   margin-right: 0px;
   padding: 10px;
-  border: 1px solid ;
+  border: 1px solid;
   border-radius: 10px;
   background-color: #ffffff;
   color: rgb(0, 0, 0);
@@ -309,21 +316,21 @@ header {
 .submitButton {
   margin-right: 0px;
   padding: 10px;
-  border: 1px solid ;
+  border: 1px solid;
   border-radius: 10px;
   background-color: #000000;
   color: rgb(255, 255, 255);
   cursor: pointer;
   transition: background-color 0.3s ease;
-  
+
 
   &:hover {
     background-color: #dbdbdb;
     border: none;
   }
-  
-  
-} 
+
+
+}
 
 // Стили добавленные для поиска книг
 
@@ -339,11 +346,12 @@ header {
     input {
       width: 100%;
       border-radius: 17px;
-      border: 1px solid #606060;
+      border: 1px solid #ffffff;
       height: 40px;
       padding: 10px;
       font-size: 18px;
-      padding-left: 50px; // Увеличьте это значение, если иконка перекрывает текст
+      padding-left: 50px;
+      box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.7);
     }
 
     .search-icon {
@@ -371,6 +379,7 @@ header {
 .modal {
   font-size: 18px;
 }
+
 //=============================================================
 
 
@@ -383,6 +392,7 @@ header {
   color: rgb(255, 255, 255);
   cursor: pointer;
   transition: background-color 0.3s ease;
+
   &:hover {
     background-color: #f8f9fa; // Выберите цвет при наведении, который вам подходит
     color: #606060; // Выберите цвет текста при наведении, который вам подходит
@@ -397,24 +407,25 @@ header {
 
   width: 600px;
   height: 60px;
-    margin-right: 0px;
-    padding: 10px;
-    border: 1px solid; // Укажите цвет границы, если нужно
-    border-radius: 10px;
-    background-color: #000000;
-    color: rgb(255, 255, 255);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    &:hover {
-      background-color: #8d8d8d; // Выберите цвет при наведении, который вам подходит
-      color: #313131; // Выберите цвет текста при наведении, который вам подходит
-      border: none;
-    
-    }
-  
+  margin-right: 0px;
+  padding: 10px;
+  border: 1px solid; // Укажите цвет границы, если нужно
+  border-radius: 10px;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #8d8d8d; // Выберите цвет при наведении, который вам подходит
+    color: #313131; // Выберите цвет текста при наведении, который вам подходит
+    border: none;
+
   }
-  
-  .doneness {
-    margin-left: 43%;
-    margin-bottom: 33px;
-  }
+
+}
+
+.doneness {
+  margin-left: 43%;
+  margin-bottom: 33px;
+}

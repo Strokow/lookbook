@@ -6,6 +6,8 @@ function CardOfCart({ book, quantity }) {
   const { updateCartData } = useCart();
   const { user } = useAuth();
 
+  const price = (book.price * quantity).toFixed(2);
+
   const handleClick = async () => {
     const login = user?.message;
     const requestBody = {
@@ -53,10 +55,10 @@ function CardOfCart({ book, quantity }) {
       <p>Quantity: {quantity}</p>
       <div className="d-flex justify-between align-center">        
         <div className="d-flex flex-column">
-          <b>{book.price * quantity}€</b>
+          <b>{price} €</b>
         </div>
         <button className="button" onClick={handleClick}>
-          <img height={25} width={25} src={"/img/greyminus.png"} alt={""} />
+          <img height={25} width={25} src={"/img/remove.png"} alt={""} />
         </button>
       </div>
     </div>

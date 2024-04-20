@@ -68,16 +68,50 @@ function Cart() {
         })}
       </div>
 
-      {!isLoading && (
+      {/* {!isLoading && (
         <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
           <button className="buy-button" onClick={() => {
             window.location.href = 'Ordered';
           }}>
-            PURCHASE - TOTAL ${totalPrice.toFixed(2)}
+            PURCHASE - TOTAL € {totalPrice.toFixed(2)}
           </button>
         </div>
 
+      )} */}
+
+      {!isLoading && (
+        <div style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}>
+          <button className="buy-button" onClick={() => {
+            // Выполнение запроса DELETE
+            fetch(`/api/carts/clear/${user?.message}`, {
+              method: 'DELETE',
+              headers: {
+                'Content-Type': 'application/json',
+                // Дополнительные заголовки
+              },
+              // Тело запроса
+            })
+              .then(response => {
+                if (response.ok) {
+                  // Обработка успешного ответа
+                  console.log('Order successfully deleted');
+                  // Перенаправление на страницу Ordered
+                  window.location.href = 'Ordered';
+                } else {
+                  // Обработка ошибки
+                  console.error('Failed to delete order');
+                }
+              })
+              .catch(error => {
+                // Обработка ошибок сети или других ошибок
+                console.error('Error deleting order:', error);
+              });
+          }}>
+            PURCHASE - TOTAL € {totalPrice.toFixed(2)}
+          </button>
+        </div>
       )}
+
     </div>
   </div>;
 }
