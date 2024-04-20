@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from './AuthContext';
 import { useCart } from './CartContext';
 
-function CardOfCart({ book }) {
+function CardOfCart({ book, quantity }) {
   const { updateCartData } = useCart();
   const { user } = useAuth();
 
@@ -50,9 +50,10 @@ function CardOfCart({ book }) {
     <div className="card" >
       <img style={{ display: 'block', marginLeft: 'auto', marginRight: 'auto' }} height={160} width={123} src={`/api/img/${book.pathimg}`} alt={book.name} />
       <h5>{book.name}, {book.author}</h5>
-      <div className="d-flex justify-between align-center">
+      <p>Quantity: {quantity}</p>
+      <div className="d-flex justify-between align-center">        
         <div className="d-flex flex-column">
-          <b>{book.price}€</b>
+          <b>{book.price * quantity}€</b>
         </div>
         <button className="button" onClick={handleClick}>
           <img height={25} width={25} src={"/img/greyminus.png"} alt={""} />
