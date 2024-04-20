@@ -1,0 +1,17 @@
+.search-library-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  
+    > .library {
+      position: relative;
+      z-index: 0;
+    }
+  
+    > .SearchField {
+      position: absolute;
+      z-index: 1;
+    }
+  }
+  

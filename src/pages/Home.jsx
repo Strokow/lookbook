@@ -23,7 +23,7 @@ function Home() {
       <div className="d-flex flex-wrap justify-between">
         { books.map((book) => (
           <div style={{ marginBottom: "30px" }} key={book.id}>
-              {isLoading ? <MyLoader /> : <Card book={book} /> }
+              {isLoading ? <MyLoader /> : <Card book={book} updateCart={updateCart} /> }
           </div>
         ))}
       </div>

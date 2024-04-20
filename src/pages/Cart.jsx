@@ -41,7 +41,7 @@ function Cart() {
             // alert(`Total price is ${totalPrice}`);
             window.location.href = 'Ordered'; 
           }}>
-            PURCHASE - TOTAL ${totalPrice.toFixed(2)}
+            PURCHASE - TOTAL ${totalPrice}
           </button>
         </div>
         
