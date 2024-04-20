@@ -26,13 +26,10 @@ function Cart() {
   return <div className="wrapper clear">
     <div className="content p-40">
       <h1 className="mb-40">Books in the cart</h1>
-
-      
-
       <div className="d-flex flex-wrap justify-between">
         {books.map((book) => (
           <div style={{ marginBottom: "30px" }} key={book.id}>
-            {isLoading ? <MyLoader /> : <CardOfCart book={book}/>}
+            {isLoading ? <MyLoader /> : <Card book={book}/>}
           </div>
         ))}
       </div>
@@ -51,7 +48,7 @@ function Cart() {
         
         )}
     </div>
-  </div>;
+  );
 }
 
 export default Cart;
