@@ -13,13 +13,13 @@ The fullstack team graduation project, the task of which was to make a convenien
 - React.js
 - Node.js
 - Git
-  ## Additional frameworks and libraries
+## Additional frameworks and libraries
   - Jdbc
   - Spring data jpa
   - Spring security
   - React (useState, useEffect, useContext, Router, MyLoader)
   - Flexbox
-  ## Additional tools
+## Additional tools
   - Adobe Photoshop
   - Adobe Illustrator
   - FIGMA
