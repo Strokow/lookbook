@@ -70,7 +70,7 @@ function Header() {
               <li className="d-flex align-center cart-button">
                 <img height={30} width={30} src="img/korblogo2.png" alt="Cart" />
                 <span style={{ marginLeft: '-10px', marginRight: '15px' }}>          
-                  {cartData.totalCount} шт. / {cartData.totalPrice.toFixed(2)} €
+                  {cartData.totalCount} pcs / {cartData.totalPrice.toFixed(2)} €
                 </span>
               </li>
             </Link>
