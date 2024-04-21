@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import MyLoader from "../components/MyLoader";
 import CardOfCart from "../components/CardOfCart";
 import { useAuth } from '../components/AuthContext';
+import {useNavigate } from 'react-router-dom';
 
 function Cart() {
   const [books, setBooks] = useState([]);
@@ -9,6 +10,7 @@ function Cart() {
   const { user } = useAuth();
   const [totalPrice, setTotalPrice] = useState(0);
   const [cartItems, setCartItems] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -54,8 +56,9 @@ function Cart() {
   }, [user?.message]);
 
   return <div className="wrapper clear">
+    <button className="BackToButton ml-40" onClick={() => navigate('/')}>Back to startpage</button>
     <div className="content p-40">
-      <h1 className="mb-40">Books in the cart</h1>
+    <h1 className="mb-40">{cartItems.length > 0 ? 'Books in the cart' : 'Cart is empty'}</h1>
 
       <div className="d-flex flex-wrap justify-between">
         {cartItems.map(item => {

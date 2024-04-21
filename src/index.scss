@@ -429,3 +429,21 @@ header {
   margin-left: 43%;
   margin-bottom: 33px;
 }
+
+.BackToButton {
+  margin-right: 0px;
+  padding: 10px 20px;
+
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+
+  &:hover {
+    background-color: #000000;
+    color:#ffffff
+    
+  }
+}
