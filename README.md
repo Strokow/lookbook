@@ -1,8 +1,8 @@
 # LookBook online book store
 The fullstack team graduation project, the task of which was to make a convenient and understandable online bookstore with a user registration form and the ability to add products to the cart and remove them from there.
 ## Team
-- Yuri Voronyi
 - Alexej Strokow
+- Yurii Voronyi
 - Olesia Dumaeva
 ## Languages
 - Java
